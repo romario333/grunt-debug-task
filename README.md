@@ -27,5 +27,5 @@ For example to debug the `test` task run this:
 grunt debug test
 ```
 
-Then open [http://127.0.0.1:8080/debug?port=5858] in your Google Chrome. And that's it. You should see the
+Then open http://127.0.0.1:8080/debug?port=5858 in Google Chrome. And that's it. You should see the
 [node-inspector](https://npmjs.org/package/node-inspector) interface now. Happy debugging.
