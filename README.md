@@ -1,0 +1,31 @@
+# grunt-debug-task
+
+> Easily debug your Grunt tasks with node-inspector.
+
+## Getting Started
+This plugin requires Grunt `~0.4.2`
+
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+
+```shell
+npm install grunt-debug-task --save-dev
+```
+
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+
+```js
+grunt.loadNpmTasks('grunt-debug-task');
+```
+
+## The "debug" task
+
+Use `debug` task to debug other tasks.
+
+For example to debug the `test` task run this:
+
+```
+grunt debug test
+```
+
+Then open [http://127.0.0.1:8080/debug?port=5858] in your Google Chrome. And that's it. You should see the
+[node-inspector](https://npmjs.org/package/node-inspector) interface now. Happy debugging.
