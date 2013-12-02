@@ -1,7 +1,7 @@
 {
   "name": "grunt-debug-task",
   "description": "Easily debug your Grunt tasks with node-inspector.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/romario333/grunt-debug-task",
   "author": {
     "name": "Roman Masek",
@@ -37,6 +37,6 @@
     "grunt": "~0.4.2"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin", "grunt", "node-inspector", "debug"
   ]
 }
