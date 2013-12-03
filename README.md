@@ -35,7 +35,7 @@ This starts [node-inspector](https://npmjs.org/package/node-inspector) and opens
 Type: `Boolean`
 Default value: `true`
 
-Set the `open` option to `true` to open the node-inspector interface in Google Chrome when task is run.
+Set the `open` option to `false` to disable opening of the node-inspector interface in Google Chrome when task is run.
 
 ### Sample Configuration
 
@@ -43,7 +43,7 @@ Set the `open` option to `true` to open the node-inspector interface in Google C
 grunt.initConfig({
   debug: {
     options: {
-      open: true // open node-inspector in Chrome automatically
+      open: false // do not open node-inspector in Chrome automatically
     }
   },
 });

@@ -23,7 +23,7 @@ module.exports = function(grunt) {
 
       // Merge task-specific options with these defaults
       var options = this.options({
-          open: false
+          open: true
       });
 
       // take tasks after debug and run them in new process with --debug-brk
