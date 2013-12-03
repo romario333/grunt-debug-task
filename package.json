@@ -43,6 +43,7 @@
     "debug"
   ],
   "dependencies": {
-    "open": "0.0.4"
+    "open": "0.0.4",
+    "node-inspector": "~0.6.1"
   }
 }

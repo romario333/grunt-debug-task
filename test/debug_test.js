@@ -2,6 +2,9 @@
 
 var grunt = require('grunt');
 
+// TODO:
+// * test debug can debug itself
+
 /*
   ======== A Handy Little Nodeunit Reference ========
   https://github.com/caolan/nodeunit

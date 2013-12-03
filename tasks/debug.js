@@ -8,8 +8,10 @@
 
 'use strict';
 
+var fork = require('child_process').fork;
 var spawn = require('child_process').spawn;
 var chrome = require('./lib/chrome');
+var path = require('path');
 
 module.exports = function(grunt) {
 
@@ -21,27 +23,25 @@ module.exports = function(grunt) {
 
       // Merge task-specific options with these defaults
       var options = this.options({
-          open: true
+          open: false
       });
 
       // take tasks after debug and run them in new process with --debug-brk
-      var nodeBin = process.argv[0];
-      var args = process.argv.slice(1).filter(function(arg) {return arg !== 'debug';});
-      args = ['--debug-brk'].concat(args);
-      grunt.log.writeln(nodeBin + ' ' + args.join(' '));
-      var debugProcess = spawn(nodeBin, args);
-      debugProcess.stdout.pipe(process.stdout);
-      debugProcess.stderr.pipe(process.stderr);
-      debugProcess.on('close', function() {
+      var gruntModule = process.argv[1];
+      var args = process.argv.slice(2).filter(function(arg) {return arg !== 'debug';});
+      grunt.log.writeln(gruntModule + ' ' + args.join(' '));
+      var debugProcess = fork(gruntModule, args, {execArgv: ['--debug-brk']});
+      debugProcess.on('exit', function(code) {
           if (nodeInspectorProcess) {
               nodeInspectorProcess.kill();
           }
 
-          done();
+          done(code === 0);
       });
 
       // start node-inspector
-      var nodeInspectorProcess = spawn('node_modules/.bin/node-inspector');
+      // TODO: use fork instead of spawn?
+      var nodeInspectorProcess = spawn(path.join(__dirname, '../node_modules/.bin/node-inspector'));
       nodeInspectorProcess.stdout.pipe(process.stdout);
       nodeInspectorProcess.stderr.pipe(process.stderr);
 
