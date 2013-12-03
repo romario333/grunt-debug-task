@@ -37,6 +37,12 @@
     "grunt": "~0.4.2"
   },
   "keywords": [
-    "gruntplugin", "grunt", "node-inspector", "debug"
-  ]
+    "gruntplugin",
+    "grunt",
+    "node-inspector",
+    "debug"
+  ],
+  "dependencies": {
+    "open": "0.0.4"
+  }
 }
