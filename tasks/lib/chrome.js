@@ -1,6 +1,7 @@
 'use strict';
 
-var open = require('open');
+var open = require('open'),
+    fs = require('fs');
 
 // Adapted from https://github.com/karma-runner/karma-chrome-launcher
 // MIT - https://github.com/karma-runner/karma-chrome-launcher/blob/master/LICENSE
