@@ -39,9 +39,16 @@ module.exports = function(grunt) {
           done(code === 0);
       });
 
+      // determine node-inspector script path
+      // append ".cmd" extension for windows platform
+      var nodeInspectorPath = path.join(__dirname, '../node_modules/.bin/node-inspector');
+      if (process.platform.indexOf("win") == 0) {
+        nodeInspectorPath += ".cmd";
+      }
+
       // start node-inspector
       // TODO: use fork instead of spawn?
-      var nodeInspectorProcess = spawn(path.join(__dirname, '../node_modules/.bin/node-inspector'));
+      var nodeInspectorProcess = spawn(nodeInspectorPath);
       nodeInspectorProcess.stdout.pipe(process.stdout);
       nodeInspectorProcess.stderr.pipe(process.stderr);
 
