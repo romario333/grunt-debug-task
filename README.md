@@ -1,6 +1,9 @@
 # grunt-debug-task
 
-> Easily debug your Grunt tasks with node-inspector.
+**This plugin is no longer maintained**, use [node-inspector](https://npmjs.org/package/node-inspector) directly:
+
+    npm install -g node-inspector
+    node-debug grunt task
 
 ## Getting Started
 This plugin requires Grunt `~0.4.2`
@@ -48,6 +51,3 @@ grunt.initConfig({
   },
 });
 ```
-
-
-

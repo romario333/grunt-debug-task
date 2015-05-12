@@ -1,7 +1,7 @@
 {
   "name": "grunt-debug-task",
-  "description": "Easily debug your Grunt tasks with node-inspector.",
-  "version": "0.1.5",
+  "description": "Easily debug your Grunt tasks with node-inspector - no longer maintained.",
+  "version": "0.1.6",
   "homepage": "https://github.com/romario333/grunt-debug-task",
   "author": {
     "name": "Roman Masek",
@@ -36,12 +36,7 @@
   "peerDependencies": {
     "grunt": "~0.4.2"
   },
-  "keywords": [
-    "gruntplugin",
-    "grunt",
-    "node-inspector",
-    "debug"
-  ],
+  "keywords": [],
   "dependencies": {
     "open": "0.0.4",
     "node-inspector": "~0.6.1"
