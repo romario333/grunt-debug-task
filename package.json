@@ -38,7 +38,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "open": "0.0.4",
-    "node-inspector": "~0.6.1"
+    "node-inspector": "^0.10.1",
+    "open": "0.0.5"
   }
 }

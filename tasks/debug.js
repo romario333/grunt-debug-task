@@ -47,21 +47,21 @@ module.exports = function(grunt) {
       }
 
       // start node-inspector
-      // TODO: use fork instead of spawn?
       var nodeInspectorProcess = spawn(nodeInspectorPath);
       nodeInspectorProcess.stdout.pipe(process.stdout);
       nodeInspectorProcess.stderr.pipe(process.stderr);
 
       // open node-inspector in Chrome (when ready)
       if (options.open) {
-          var NODE_INSPECTOR_URL = 'http://127.0.0.1:8080/debug?port=5858';
-          var nodeInspectorOut = '', isOpen = false;
-          nodeInspectorProcess.stdout.on('data', function(chunk) {
+          var inspectorUrlRe = /Visit ([^\s]+) to start debugging./
+          var nodeInspectorOut = '';
+          nodeInspectorProcess.stdout.on('data', function onData(chunk) {
               nodeInspectorOut += chunk;
-              if (!isOpen && nodeInspectorOut.indexOf(NODE_INSPECTOR_URL) !== -1) {
-                  grunt.log.writeln('Opening node-inspector in Chrome...');
-                  chrome.open(NODE_INSPECTOR_URL);
-                  isOpen = true;
+              var match = inspectorUrlRe.exec(nodeInspectorOut);
+              if (match) {
+                grunt.log.writeln('Opening node-inspector in Chrome...');
+                chrome.open(match[1]);
+                nodeInspectorProcess.stdout.removeListener('data', onData);
               }
           });
       }
