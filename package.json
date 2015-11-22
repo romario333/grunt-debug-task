@@ -1,7 +1,7 @@
 {
   "name": "grunt-debug-task",
   "description": "Easily debug your Grunt tasks with node-inspector - no longer maintained.",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "homepage": "https://github.com/romario333/grunt-debug-task",
   "author": {
     "name": "Roman Masek",
