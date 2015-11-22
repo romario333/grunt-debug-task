@@ -28,9 +28,6 @@
     "test": "grunt test"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt-contrib-clean": "~0.4.0",
-    "grunt-contrib-nodeunit": "~0.2.0",
     "grunt": "~0.4.2"
   },
   "peerDependencies": {
@@ -38,7 +35,12 @@
   },
   "keywords": [],
   "dependencies": {
-    "node-inspector": "^0.10.1",
-    "open": "0.0.5"
-  }
+    "node-inspector": "~0.12.3",
+    "open": "~0.0.5"
+  },
+  "files": [
+    "LICENSE-MIT",
+    "README.md",
+    "tasks"
+  ]
 }
